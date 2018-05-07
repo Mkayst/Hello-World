@@ -1,0 +1,38 @@
+
+public class ADSMultiplikator {
+	public static void main (String[] args)	{
+	int ergebnis = 0;
+	
+	System.out.print("Multipliziere X = ");
+	int x = StaticScanner.nextInt();
+	
+	System.out.print("Mit Y = ");
+	int y = StaticScanner.nextInt();
+	
+	ergebnis = Multiplikator(x,y, ergebnis);
+	System.out.print("Das Ergebnis ist " + ergebnis + ".");		
+	}
+	
+	static int Multiplikator(int x, int y, int ergebnis) {
+		
+		while (x > 0) {
+			
+			if (x%2 != 0) {
+				ergebnis += y;
+				x = x/2;
+				y = y*2;
+				return Multiplikator(x,y,ergebnis);
+				}
+			
+			else {
+				x = x/2;
+				y = y*2;
+				return Multiplikator(x,y,ergebnis);
+				}
+			}
+		return ergebnis;
+		}
+	}
+
+
+
